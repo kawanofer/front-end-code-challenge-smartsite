@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
 
-import Header from '@/components/Header';
+
+import "./globals.css";
+import { Inter } from "next/font/google";
 import Footer from "@/components/Footer";
 import Form from "@/components/Form";
+import Header from '@/components/Header';
 import Legend from "@/components/Legend";
 import List from "@/components/List";
+import type { Metadata } from "next";
 
 const inter = Inter({ subsets: ["latin"] });
 

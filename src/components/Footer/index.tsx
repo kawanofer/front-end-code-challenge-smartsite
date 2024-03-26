@@ -1,6 +1,8 @@
-import React from 'react';
 import Image from 'next/image'
-import SmartFitLogo from '../../../public/assets/logo.svg';
+
+import React from 'react'
+
+import SmartFitLogo from '../../../public/assets/logo.svg'
 
 export default function Footer() {
   return (
@@ -13,5 +15,5 @@ export default function Footer() {
       />
       <p className='mt-3 text-white'>Todos os direitos reservados - 2020</p>
     </div>
-  );
+  )
 }
