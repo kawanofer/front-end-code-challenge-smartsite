@@ -3,14 +3,42 @@
 @tailwind utilities;
 
 /* Apply basic global styles to the body: */
+* {
+  @apply m-0 p-0;
+}
+
 body {
-  @apply bg-[#fff] text-[#000] font-sans antialiased;
+  @apply bg-[#fff] text-darkGrey font-sans antialiased w-full h-full;
 }
 
-.img {
-  @apply object-cover w-full h-full;
+@font-face {
+  font-family: 'Gotham';
+  src: url('../../public/assets/fonts/gotham-light.woff2') format('truetype');
+  font-weight: 300;
+  font-style: normal;
 }
 
-.scale-animation {
-  @apply hover:scale-125 transition-all duration-700;
+@font-face {
+  font-family: 'Gotham';
+  src: url('../../public/assets/fonts/gotham-book.woff2') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('../../public/assets/fonts/gotham-bold.woff2') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('../../public/assets/fonts/gotham-black.woff2') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+.gotham {
+  font-family: 'Gotham', sans-serif;
 }
