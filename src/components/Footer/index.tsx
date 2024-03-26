@@ -6,14 +6,14 @@ import SmartFitLogo from '../../../public/assets/logo.svg'
 
 export default function Footer() {
   return (
-    <div className='bg-darkGrey py-10 flex flex-col justify-center items-center'>
+    <footer className='bg-darkGrey py-10 mt-20 gap-3 flex flex-col justify-center items-center'>
       <Image
         alt='Smartfit logo em branco e amarelo'
         priority={false}
         src={SmartFitLogo}
-        height={110}
+        height={50}
       />
-      <p className='mt-3 text-white'>Todos os direitos reservados - 2020</p>
-    </div>
+      <p className='text-lightGrey'>Todos os direitos reservados - 2020</p>
+    </footer>
   )
 }
