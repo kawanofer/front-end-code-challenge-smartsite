@@ -4,11 +4,11 @@ import React from 'react'
 type BoxProps = {
   icon1: StaticImageData
   icon2: StaticImageData
-  icon3?: StaticImageData | undefined
-  title: string
+  icon3?: StaticImageData
   legend1: string
   legend2: string
-  legend3?: string | undefined
+  legend3?: string
+  title: string
 }
 
 const Box: React.FC<BoxProps> = ({ icon1, icon2, icon3, title, legend1, legend2, legend3 }) => {
@@ -38,4 +38,4 @@ const Box: React.FC<BoxProps> = ({ icon1, icon2, icon3, title, legend1, legend2,
   )
 }
 
-export default Box;
+export default Box
