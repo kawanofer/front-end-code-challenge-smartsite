@@ -11,7 +11,15 @@ type BoxProps = {
   title: string
 }
 
-const Box: React.FC<BoxProps> = ({ icon1, icon2, icon3, title, legend1, legend2, legend3 }) => {
+const Box: React.FC<BoxProps> = ({
+  icon1,
+  icon2,
+  icon3,
+  title,
+  legend1,
+  legend2,
+  legend3
+}) => {
   return (
     <div className='flex flex-col items-center text-center'>
       <p className='text-lg font-bold'>{title}</p>
@@ -27,12 +35,12 @@ const Box: React.FC<BoxProps> = ({ icon1, icon2, icon3, title, legend1, legend2,
           <p className='text-lg mt-3'>{legend2}</p>
         </div>
 
-        {icon3 &&
+        {icon3 && (
           <div className='mt-3 items-center text-center'>
             <Image src={icon3} alt={`Icon ${title} ${legend3}`} height={100} />
             <p className='text-lg mt-3'>{legend3}</p>
           </div>
-        }
+        )}
       </div>
     </div>
   )

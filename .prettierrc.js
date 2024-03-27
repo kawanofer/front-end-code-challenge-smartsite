@@ -11,17 +11,5 @@ module.exports = {
   tabWidth: 2,
   trailingComma: 'none',
   useTabs: false,
-  importOrderParserPlugins: ['jsx', 'decorators-legacy'],
-  plugins: [require.resolve('@trivago/prettier-plugin-sort-imports')],
-  importOrder: [
-    '^next',
-    '^react',
-    '<THIRD_PARTY_MODULES>',
-    '^@/scomponents',
-    '^utils',
-    '^[./]'
-  ],
-  importOrderSeparation: true,
-  importOrderSortSpecifiers: true,
-  importOrderCaseInsensitive: true
+  importOrderParserPlugins: ['jsx', 'decorators-legacy']
 }

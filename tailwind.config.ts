@@ -10,7 +10,8 @@ const config: Config = {
     extend: {
       colors: {
         darkGrey: '#333333',
-        grey: '#F5F5F5',
+        lightText: '#e5e5e5',
+        mediumText: '#939393',
         lightGrey: '#808080',
         yellow: '#FFB612',
         red: '#dc0a17',
