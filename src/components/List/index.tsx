@@ -1,34 +1,17 @@
 'use client'
 
 import Image from 'next/image'
-import React from 'react'
+import React, { useContext } from 'react'
 
-type LocationProps = {
-  content: string
-  fountain: string
-  id: number
-  locker_room: string
-  mask: string
-  opened: boolean
-  title: string
-  towel: string
-  schedules?: Schedule[]
+import { LocationsContext } from '@/store/context/LocationsContext'
 
-  city_name?: string
-  region?: string
-  state_name?: string
-  street?: string
-  uf?: string
-}
-
-type Schedule = {
-  hour: string
-  weekdays: string
-}
+import { LocationProps } from '@/types/locationTypes'
 
 export default function List({
   locations
 }: Readonly<{ locations: Readonly<LocationProps>[] }>) {
+  const { storeLocationsFiltered } = useContext(LocationsContext)
+
   const handleIsOpen = (opened: boolean) => {
     if (opened) {
       return <span className='text-green font-semibold'>Aberto</span>
@@ -42,7 +25,7 @@ export default function List({
 
   return (
     <div className='grid grid-cols-3 gap-5'>
-      {locations.map((loc: LocationProps, index: number) => {
+      {storeLocationsFiltered.map((loc: LocationProps, index: number) => {
         return (
           <div className='flex flex-col bg-grey p-5 shadow-md shadow-lightGrey' key={loc.id + '-' + index}>
             {handleIsOpen(loc.opened)}
@@ -91,7 +74,7 @@ export default function List({
               )}
             </ul>
 
-            <ul className='flex flex-wrap w-full gap-5 mt-5'>
+            <ul className='grid grid-cols-3 w-full gap-5 mt-5'>
               {loc?.schedules?.map((schedule, index) => {
                 return (
                   <li className='flex flex-col flex-wrap gap-x-5 gap-y-1' key={JSON.stringify(schedule)}>
