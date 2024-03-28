@@ -13,7 +13,7 @@ export default async function Home() {
     <>
       <Form locationsSize={locationsList?.locations.length} />
       <Legend />
-      <List locations={locationsList?.locations} />
+      {locationsList.locations?.length > 0 && <List locations={locationsList.locations} />}
     </>
   )
 }
