@@ -13,6 +13,7 @@ const config: Config = {
         lightText: '#e5e5e5',
         mediumText: '#939393',
         lightGrey: '#808080',
+        boxBGColor: '#F5F5F5',
         yellow: '#FFB612',
         red: '#dc0a17',
         green: '#2FC022',

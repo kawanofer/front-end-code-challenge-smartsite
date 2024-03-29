@@ -11,9 +11,9 @@ import { LocationsContext } from '@/store/context/LocationsContext'
 import { LocationProps } from '@/types/locationTypes'
 
 const PERIOD = {
-  'morning': ['06', '12'],
-  'afternoon': ['12', '18'],
-  'night': ['18', '23']
+  morning: ['06', '12'],
+  afternoon: ['12', '18'],
+  night: ['18', '23']
 }
 
 type periodProps = 'morning' | 'afternoon' | 'night' | ''
@@ -21,18 +21,19 @@ type periodProps = 'morning' | 'afternoon' | 'night' | ''
 export default function Form({
   locations
 }: Readonly<{ locations: Readonly<LocationProps>[] }>) {
-  const { storeLocationsFiltered, setStoreLocationsFiltered } = useContext(LocationsContext)
+  const { storeLocationsFiltered, setStoreLocationsFiltered } =
+    useContext(LocationsContext)
 
   const [selectedPeriod, setSelectedPeriod] = useState<periodProps>('')
   const [showClosed, setShowClosed] = useState<boolean>(false)
 
   const handleHourChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedPeriod(event.target.value)
-  };
+  }
 
   const handleShowClosedChange = () => {
     setShowClosed(!showClosed)
-  };
+  }
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -40,15 +41,18 @@ export default function Form({
     const period = PERIOD[selectedPeriod]
 
     if (showClosed) {
-      filtered = filtered.filter(loc => loc?.opened !== true)
+      filtered = filtered.filter((loc) => loc?.opened !== true)
     }
 
     if (!isEmpty(selectedPeriod)) {
-      const locationsWithinPeriod = locations.filter(loc => {
+      const locationsWithinPeriod = locations.filter((loc) => {
         return some(loc.schedules, (schedule) => {
           if (schedule.hour !== 'Fechada') {
             const start = schedule.hour.substring(0, 2)
-            const end = schedule.hour.substring(schedule.hour.length - 1, schedule.hour.length - 3)
+            const end = schedule.hour.substring(
+              schedule.hour.length - 1,
+              schedule.hour.length - 3
+            )
             if (period[0] >= start && period[1] <= end) {
               return true
             }
@@ -70,9 +74,9 @@ export default function Form({
 
   return (
     <form
+      className='flex flex-col items-start justify-center border-4 rounded-lg p-5'
       onSubmit={onSubmit}
-      onReset={onReset}
-      className='flex flex-col items-start justify-center border-4 rounded-lg p-5'>
+      onReset={onReset}>
       <div className='flex items-center gap-3'>
         <Image src={clock} alt={'clock icon'} width={30} height={30} /> Horário
       </div>
@@ -134,11 +138,14 @@ export default function Form({
         <Button id='btn-submit' variant='primary' type='submit'>
           ENCONTRAR UNIDADE
         </Button>
-        <Button id='btn-reset' variant='secondary' type='reset'>
+        <Button
+          id='btn-reset'
+          variant='secondary'
+          type='reset'
+          className='border-4 rounded-lg'>
           LIMPAR
         </Button>
       </div>
     </form>
   )
 }
-

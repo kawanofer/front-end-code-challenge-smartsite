@@ -13,7 +13,9 @@ export default function Footer() {
         src={SmartFitLogo}
         height={50}
       />
-      <p className='text-lightGrey'>Todos os direitos reservados - 2020</p>
+      <p className='text-lightText text-xl'>
+        Todos os direitos reservados - 2020
+      </p>
     </footer>
   )
 }

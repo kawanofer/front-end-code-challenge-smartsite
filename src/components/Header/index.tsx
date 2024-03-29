@@ -12,18 +12,17 @@ export default function Header() {
           alt='Smartfit logo em branco e amarelo'
           priority={false}
           src={SmartFitLogo}
-          width={100}
-          height={100}
+          width={230}
         />
       </div>
-      <section className='py-12 max-w-screen-xl m-auto'>
-        <div className='text-5xl font-bold mb-5'>
+      <section className='pt-20 pb-10 max-w-screen-xl m-auto'>
+        <div className='text-6xl font-bold mb-5'>
           REABERTURA
           <br />
           SMART FIT
         </div>
-        <div className='h-3 bg-darkGrey w-20' />
-        <p className='mt-10 text-lightGrey'>
+        <div className='h-3 bg-darkGrey w-32' />
+        <p className='mt-10 text-lightGrey font-semibold'>
           O horário de funcionamento das nossas unidades está seguindo os
           decretos de cada município. Por isso, confira aqui se a sua unidade
           está aberta e as medidas de segurança que estamos seguindo.

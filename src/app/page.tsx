@@ -14,7 +14,9 @@ export default async function Home() {
     <LocationsProvider>
       <Form locations={locationsList.locations} />
       <Legend />
-      {locationsList.locations?.length > 0 && <List locations={locationsList.locations} />}
+      {locationsList.locations?.length > 0 && (
+        <List locations={locationsList.locations} />
+      )}
     </LocationsProvider>
   )
 }

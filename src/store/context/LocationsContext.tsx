@@ -10,7 +10,8 @@ export const LocationsProvider = ({ children }) => {
   const [storeLocationsFiltered, setStoreLocationsFiltered] = useState([])
 
   return (
-    <LocationsContext.Provider value={{ storeLocationsFiltered, setStoreLocationsFiltered }}>
+    <LocationsContext.Provider
+      value={{ storeLocationsFiltered, setStoreLocationsFiltered }}>
       {children}
     </LocationsContext.Provider>
   )

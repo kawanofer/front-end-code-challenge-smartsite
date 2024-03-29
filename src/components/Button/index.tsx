@@ -6,6 +6,7 @@ type ButtonProps = {
   onClick?: () => void
   type: 'button' | 'submit' | 'reset'
   variant: string
+  className?: string
 }
 
 const Button = ({
@@ -13,7 +14,8 @@ const Button = ({
   children,
   type = 'button',
   onClick,
-  variant = 'primary'
+  variant = 'primary',
+  className
 }: ButtonProps) => {
   const getButtonStyles = () => {
     switch (variant) {
@@ -26,7 +28,7 @@ const Button = ({
 
   return (
     <button
-      className={`rounded-md px-5 py-3 min-w-72 ${getButtonStyles()}`}
+      className={`rounded-md px-5 py-3 min-w-96 ${getButtonStyles()} ${className}`}
       id={id}
       onClick={onClick}
       type={type}>

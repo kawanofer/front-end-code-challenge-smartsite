@@ -8,7 +8,7 @@
 }
 
 body {
-  @apply bg-[#fff] text-darkGrey font-sans antialiased w-full h-full;
+  @apply bg-[#fff] text-darkGrey font-sans antialiased w-full h-full text-xl;
 }
 
 @font-face {

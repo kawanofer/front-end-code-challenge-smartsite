@@ -14,7 +14,7 @@ import Box from './Box'
 export default function Legend() {
   return (
     <div className='py-12'>
-      <div className='bg-[#F5F5F5] p-5 flex justify-between'>
+      <div className='bg-boxBGColor p-5 flex justify-between'>
         <Box
           icon1={requiredMask}
           icon2={recommendedMask}

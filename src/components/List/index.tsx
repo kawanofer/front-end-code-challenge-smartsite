@@ -27,11 +27,17 @@ export default function List({
     <div className='grid grid-cols-3 gap-5'>
       {storeLocationsFiltered.map((loc: LocationProps, index: number) => {
         return (
-          <div className='flex flex-col bg-grey p-5 shadow-md shadow-lightGrey' key={loc.id + '-' + index}>
+          <div
+            className='flex flex-col bg-grey p-5 shadow-md shadow-lightGrey bg-boxBGColor'
+            key={loc.id + '-' + index}>
             {handleIsOpen(loc.opened)}
-            <h3 className='text-2xl font-semibold py-3'>{loc.title}</h3>
+            <h3 className='text-3xl font-semibold py-3'>{loc.title}</h3>
             {loc.content && (
-              <p dangerouslySetInnerHTML={{ __html: loc?.content.replace(/\n/g, '') }} />
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: loc?.content.replace(/\n/g, '')
+                }}
+              />
             )}
             {!loc.content && <p>{getFullAddreess(loc)}</p>}
 
@@ -74,12 +80,18 @@ export default function List({
               )}
             </ul>
 
-            <ul className='grid grid-cols-3 w-full gap-5 mt-5'>
+            <ul className='grid grid-cols-2 w-full gap-5 mt-5'>
               {loc?.schedules?.map((schedule, index) => {
                 return (
-                  <li className='flex flex-col flex-wrap gap-x-5 gap-y-1' key={JSON.stringify(schedule)}>
-                    <p className='text-darkGrey text-xl'>{schedule.weekdays}</p>
-                    <div className='text-lightGrey'>{schedule.hour}</div>
+                  <li
+                    className='flex flex-col flex-wrap gap-x-5 gap-y-1'
+                    key={JSON.stringify(schedule)}>
+                    <p className='text-darkGrey text-2xl font-bold'>
+                      {schedule.weekdays}
+                    </p>
+                    <div className='text-lightGrey font-semibold'>
+                      {schedule.hour}
+                    </div>
                   </li>
                 )
               })}
