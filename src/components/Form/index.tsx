@@ -10,21 +10,18 @@ import { LocationsContext } from '@/store/context/LocationsContext'
 
 import { LocationProps } from '@/types/locationTypes'
 
-const PERIOD = {
+const PERIOD: { [key: string]: string[] } = {
   morning: ['06', '12'],
   afternoon: ['12', '18'],
   night: ['18', '23']
 }
 
-type periodProps = 'morning' | 'afternoon' | 'night' | ''
-
 export default function Form({
   locations
 }: Readonly<{ locations: Readonly<LocationProps>[] }>) {
-  const { storeLocationsFiltered, setStoreLocationsFiltered } =
-    useContext(LocationsContext)
+  const { storeLocationsFiltered, setStoreLocationsFiltered } = useContext(LocationsContext) as { storeLocationsFiltered: LocationProps[]; setStoreLocationsFiltered: React.Dispatch<React.SetStateAction<LocationProps[]>> };
 
-  const [selectedPeriod, setSelectedPeriod] = useState<periodProps>('')
+  const [selectedPeriod, setSelectedPeriod] = useState<string>('')
   const [showClosed, setShowClosed] = useState<boolean>(false)
 
   const handleHourChange = (event: React.ChangeEvent<HTMLInputElement>) => {

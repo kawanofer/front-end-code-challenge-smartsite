@@ -10,7 +10,7 @@ import { LocationProps } from '@/types/locationTypes'
 export default function List({
   locations
 }: Readonly<{ locations: Readonly<LocationProps>[] }>) {
-  const { storeLocationsFiltered } = useContext(LocationsContext)
+  const { storeLocationsFiltered } = useContext(LocationsContext) as { storeLocationsFiltered: LocationProps[]; };
 
   const handleIsOpen = (opened: boolean) => {
     if (opened) {

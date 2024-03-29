@@ -1,22 +1,24 @@
 'use client'
 
-import React, { createContext, useState } from 'react'
+import React, { createContext, useState } from 'react';
+import PropTypes from 'prop-types';
 
-import PropTypes from 'prop-types'
+export const LocationsContext = createContext({});
 
-export const LocationsContext = createContext({})
+interface LocationsProviderProps {
+  children: React.ReactNode;
+}
 
-export const LocationsProvider = ({ children }) => {
-  const [storeLocationsFiltered, setStoreLocationsFiltered] = useState([])
+export const LocationsProvider: React.FC<LocationsProviderProps> = ({ children }) => {
+  const [storeLocationsFiltered, setStoreLocationsFiltered] = useState([]);
 
   return (
-    <LocationsContext.Provider
-      value={{ storeLocationsFiltered, setStoreLocationsFiltered }}>
+    <LocationsContext.Provider value={{ storeLocationsFiltered, setStoreLocationsFiltered }}>
       {children}
     </LocationsContext.Provider>
-  )
-}
+  );
+};
 
 LocationsProvider.propTypes = {
   children: PropTypes.node.isRequired
-}
+};
